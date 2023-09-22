@@ -5,18 +5,22 @@ registerForm.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
-  const email = form.elements.login.value;
-  const password = form.elements.password.value;
+  const email = form.elements.email.value.trim(); 
+  const password = form.elements.password.value.trim(); 
 
-  if (email === " " || password === "") {
+  let hasError = false;
+
+  if (email === "" || password === "") {
     alert("Please fill in all the fields!");
-    return;
+    hasError = true;
   }
 
-  const formData = {
-    email: email,
-    password: password,
-  };
-  console.log(formData);
-  form.reset();
+  if (!hasError) {
+    const formData = {
+      email: email,
+      password: password,
+    };
+    console.log(formData);
+    form.reset();
+  }
 }
