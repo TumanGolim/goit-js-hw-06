@@ -5,8 +5,8 @@ registerForm.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
-  const email = form.elements.email.value.trim(); 
-  const password = form.elements.password.value.trim(); 
+  const email = form.elements.email.value.trim();
+  const password = form.elements.password.value.trim();
 
   let hasError = false;
 
